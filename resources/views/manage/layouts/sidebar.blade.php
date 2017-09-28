@@ -24,7 +24,7 @@
 
     <li class="menu-list" id="nav_3"><a href=""><i class="fa fa-truck"></i> <span>订单管理</span></a>
         <ul class="sub-menu-list">
-            <li id="nav_3_1"><a href="">订单管理</a></li>
+            <li id="nav_3_1"><a href="{{ route('order_list') }}">订单管理</a></li>
         </ul>
     </li>
 </ul>

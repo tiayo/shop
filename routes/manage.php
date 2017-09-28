@@ -32,11 +32,17 @@ $this->group(['namespace' => 'Manage', 'prefix' => 'manage'], function () {
             //会员相关
             $this->get('/user/list/', 'UserController@listView')->name('user_list');
             $this->get('/user/list/{keyword}', 'UserController@listView')->name('user_search');
-            $this->get('/user/add', 'UserController@addView')->name('user_add');
-            $this->post('/user/add', 'UserController@post');
             $this->get('/user/update/{id}', 'UserController@updateView')->name('user_update');
             $this->post('/user/update/{id}', 'UserController@post');
             $this->get('/user/destroy/{id}', 'UserController@destroy')->name('user_destroy');
+
+            //订单管理
+            $this->get('/order/list/', 'OrderController@listView')->name('order_list');
+            $this->get('/order/list/{keyword}', 'OrderController@listView')->name('order_search');
+            $this->get('/order/update/{order_id}', 'OrderController@updateView')->name('order_update');
+            $this->post('/order/update/{order_id}', 'OrderController@updatePost');
+            $this->get('/order/destroy/{order_id}', 'OrderController@destroy')->name('order_destroy');
+            $this->get('/order/status/{order_id}/{status}', 'OrderController@changeStatus')->name('order_status');
         });
     });
 });

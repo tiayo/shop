@@ -2,34 +2,33 @@
 
 namespace App\Repositories;
 
-use App\Attribute;
+use App\Order;
 
-class AttributeRepository
+class OrderRepository
 {
-    protected $attribute;
+    protected $order;
 
-    public function __construct(Attribute $attribute)
+    public function __construct(Order $order)
     {
-        $this->attribute = $attribute;
+        $this->order = $order;
     }
 
     public function create($data)
     {
-        return $this->attribute->create($data);
+        return $this->order->create($data);
     }
 
     /**
-     * 获取所有显示记录
+     * 获取所有显示记录（带分页）
      *
      * @param $page
      * @param $num
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function get($num, $category_id)
+    public function get($num)
     {
-        return $this->attribute
+        return $this->order
             ->orderBy('id', 'desc')
-            ->where('category_id', $category_id)
             ->paginate($num);
     }
 
@@ -42,12 +41,12 @@ class AttributeRepository
      */
     public function getSimple(...$select)
     {
-        return $this->attribute
+        return $this->order
             ->select($select)
             ->orderBy('id', 'desc')
             ->get();
     }
-
+    
     /**
      * 获取显示的搜索结果
      *
@@ -55,39 +54,28 @@ class AttributeRepository
      * @param $keyword
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getSearch($num, $keyword)
+    public function getSearch($order_id)
     {
-        return $this->attribute
-            ->where(function ($query) use ($keyword) {
-                $query->where('attributes.name', 'like', "%$keyword%")
-                    ->orwhere('attributes.email', 'like', "%$keyword%");
-            })
-            ->orderBy('id', 'desc')
-            ->paginate($num);
+        return $this->order
+            ->where('id', $order_id)
+            ->get();
     }
     
     public function first($id)
     {
-        return $this->attribute->find($id);
+        return $this->order->find($id);
     }
 
     public function destroy($id)
     {
-        //删除关联
-        $this->attribute
-            ->find($id)
-            ->profile()
-            ->delete();
-
-        //删除attribute表
-        return $this->attribute
+        return $this->order
             ->where('id', $id)
             ->delete();
     }
 
     public function selectFirst($where, ...$select)
     {
-        return $this->attribute
+        return $this->order
             ->select($select)
             ->where($where)
             ->first();
@@ -95,15 +83,8 @@ class AttributeRepository
 
     public function update($id, $data)
     {
-        return $this->attribute
+        return $this->order
             ->where('id', $id)
             ->update($data);
-    }
-
-    public function count($where)
-    {
-        return $this->attribute
-            ->where($where)
-            ->count();
     }
 }

@@ -21,15 +21,15 @@ class CreateCommoditiesTable extends Migration
             $table->string('unit'); //商品计数单位（个、斤等）
             $table->longText('description'); //商品描述
             $table->integer('status')->default(0); //商品状态（默认下架）
-            $table->string('image_0')->nullable; //商品图片1
-            $table->string('image_1')->nullable; //商品图片2
-            $table->string('image_2')->nullable; //商品图片3
-            $table->string('image_3')->nullable; //商品图片4
-            $table->string('image_4')->nullable; //商品图片5
-            $table->string('image_5')->nullable; //商品图片6
-            $table->string('image_6')->nullable; //商品图片7
-            $table->string('image_7')->nullable; //商品图片8
-            $table->string('image_8')->nullable; //商品图片9
+            $table->string('image_0')->nullable(); //商品图片1
+            $table->string('image_1')->nullable(); //商品图片2
+            $table->string('image_2')->nullable(); //商品图片3
+            $table->string('image_3')->nullable(); //商品图片4
+            $table->string('image_4')->nullable(); //商品图片5
+            $table->string('image_5')->nullable(); //商品图片6
+            $table->string('image_6')->nullable(); //商品图片7
+            $table->string('image_7')->nullable(); //商品图片8
+            $table->string('image_8')->nullable(); //商品图片9
             $table->timestamps();
         });
     }
