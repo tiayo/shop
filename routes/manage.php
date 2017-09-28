@@ -28,6 +28,15 @@ $this->group(['namespace' => 'Manage', 'prefix' => 'manage'], function () {
             $this->get('/attribute/update/{id}', 'AttributeController@updateView')->name('attribute_update');
             $this->post('/attribute/update/{id}', 'AttributeController@updatePost');
             $this->get('/attribute/destroy/{id}', 'AttributeController@destroy')->name('attribute_destroy');
+
+            //会员相关
+            $this->get('/user/list/', 'UserController@listView')->name('user_list');
+            $this->get('/user/list/{keyword}', 'UserController@listView')->name('user_search');
+            $this->get('/user/add', 'UserController@addView')->name('user_add');
+            $this->post('/user/add', 'UserController@post');
+            $this->get('/user/update/{id}', 'UserController@updateView')->name('user_update');
+            $this->post('/user/update/{id}', 'UserController@post');
+            $this->get('/user/destroy/{id}', 'UserController@destroy')->name('user_destroy');
         });
     });
 });

@@ -49,7 +49,7 @@ class UserRepository
             ->orderBy('id', 'desc')
             ->paginate($num);
     }
-    
+
     public function first($id)
     {
         return $this->user->find($id);

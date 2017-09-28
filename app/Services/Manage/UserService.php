@@ -3,10 +3,13 @@
 namespace App\Services\Manage;
 
 use App\Repositories\UserRepository;
+use App\Services\ImageService;
 use Exception;
 
 class UserService
 {
+    use ImageService;
+
     protected $user;
 
     public function __construct(UserRepository $user)
@@ -43,6 +46,32 @@ class UserService
         }
 
         return $this->user->get($num);
+    }
+
+    /**
+     * 更新
+     *
+     * @param $post
+     * @param null $id
+     * @return mixed
+     */
+    public function update($post, $id)
+    {
+        //统计数据
+        $data['name'] = $post['name'];
+        $data['email'] = $post['email'];
+
+        empty($post['phone']) ? true : $data['phone'] = $post['phone'];
+        empty($post['address']) ? true : $data['address'] = $post['address'];
+        empty($post['password']) ? true : $data['password'] = bcrypt($post['password']);
+
+        if (isset($post['avatar']))
+        {
+            $data['avatar'] = $this->uploadImage($post['avatar']);
+        }
+        
+        //执行插入或更新
+        return $this->user->update($id, $data);
     }
 
     /**

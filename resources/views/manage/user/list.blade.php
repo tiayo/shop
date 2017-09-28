@@ -7,8 +7,8 @@
 @endsection
 
 @section('breadcrumb')
-    <li navValue="nav_0"><a href="#">管理员专区</a></li>
-    <li navValue="nav_0_2"><a href="#">会员管理</a></li>
+    <li navValue="nav_2"><a href="#">会员管理</a></li>
+    <li navValue="nav_2_1"><a href="#">会员管理</a></li>
 @endsection
 
 @section('body')
@@ -32,8 +32,10 @@
 		                <tr>
 		                    <th>ID</th>
 		                    <th>姓名</th>
-		                    <th>email</th>
-                            <th>积分</th>
+		                    <th>邮箱</th>
+		                    <th>电话</th>
+                            <th>地址</th>
+                            <th>状态</th>
                             <th>注册时间</th>
 							<th>操作</th>
 		                </tr>
@@ -45,17 +47,13 @@
                             <td>{{ $list['id'] }}</td>
                             <td>{{ $list['name'] }}</td>
                             <td>{{ $list['email'] }}</td>
-                            <td>{{ $list->profile->score }}</td>
+                            <td>{{ $list['phone'] }}</td>
+                            <td>{{ $list['address'] }}</td>
+                            <td>{{ config('site.user_status')[$list['status']] }}</td>
                             <td>{{ $list['created_at'] }}</td>
                             <td>
-                                <button class="btn btn-info" type="button"
-                                        onclick="location=''">
-                                    查看预约
-                                </button>
-                                <button class="btn btn-danger" type="button"
-                                        onclick="javascript:if(confirm('确实要删除吗?'))location='{{ route('user_destroy', ['id' => $list['id'] ]) }}'">
-                                    删除会员
-                                </button>
+                                <button class="btn btn-info" type="button" onclick="location='{{ route('user_update', ['id' => $list['id'] ]) }}'">编辑</button>
+                                <button class="btn btn-danger" type="button" onclick="javascript:if(confirm('确实要删除吗?'))location='{{ route('user_destroy', ['id' => $list['id'] ]) }}'">删除</button>
                             </td>
                         </tr>
                         @endforeach

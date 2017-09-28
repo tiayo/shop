@@ -8,7 +8,7 @@
 
 @section('breadcrumb')
     <li navValue="nav_0"><a href="#">管理专区</a></li>
-    <li navValue="nav_0_1"><a href="#">商品属性管理</a></li>
+    <li navValue="nav_0_3"><a href="#">商品属性管理</a></li>
 @endsection
 
 @section('body')
@@ -29,6 +29,7 @@
 		                    <th>ID</th>
 		                    <th>名称</th>
 		                    <th>属性值</th>
+		                    <th>所属分类</th>
                             <th>添加时间</th>
 							<th>操作</th>
 		                </tr>
@@ -39,6 +40,7 @@
                         <tr>
                             <td>{{ $list['id'] }}</td>
                             <td>{{ $list['name'] }}</td>
+                            <td>{{ $list->category->name }}</td>
                             <td>{{ $list['value'] }}</td>
                             <td>{{ $list['created_at'] }}</td>
                             <td>

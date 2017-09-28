@@ -5,6 +5,7 @@
         <ul class="sub-menu-list">
             <li id="nav_0_1"><a href=" {{ route('category_list') }} ">分类管理</a></li>
             <li id="nav_0_2"><a href=" {{ route('category_add') }} ">添加分类</a></li>
+            <li id="nav_0_3"><a href="#">商品属性</a></li>
         </ul>
     </li>
 
@@ -17,7 +18,7 @@
 
     <li class="menu-list" id="nav_2"><a href=""><i class="fa fa-user"></i> <span>会员管理</span></a>
         <ul class="sub-menu-list">
-            <li id="nav_2_1"><a href="">会员管理</a></li>
+            <li id="nav_2_1"><a href="{{ route('user_list') }}">会员管理</a></li>
         </ul>
     </li>
 

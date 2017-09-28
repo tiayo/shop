@@ -8,7 +8,7 @@
 
 @section('breadcrumb')
     <li navValue="nav_0"><a href="#">管理专区</a></li>
-    <li navValue="nav_0_1"><a href="#">添加/管理商品属性</a></li>
+    <li navValue="nav_0_3"><a href="#">添加/管理商品属性</a></li>
 @endsection
 
 @section('body')
