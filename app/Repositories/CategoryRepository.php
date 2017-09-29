@@ -13,6 +13,12 @@ class CategoryRepository
         $this->category = $category;
     }
 
+    /**
+     * 创建记录
+     *
+     * @param $data
+     * @return mixed
+     */
     public function create($data)
     {
         return $this->category->create($data);
@@ -48,11 +54,10 @@ class CategoryRepository
     }
 
     /**
-     * 获取所有显示记录(简易)
+     * 获取所有显示记录(不带分页)
      *
-     * @param $page
-     * @param $num
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @param array ...$select
+     * @return mixed
      */
     public function getSimple(...$select)
     {
@@ -78,12 +83,24 @@ class CategoryRepository
             ->orderBy('id', 'desc')
             ->paginate($num);
     }
-    
+
+    /**
+     * 获取单条记录
+     *
+     * @param $id
+     * @return mixed
+     */
     public function first($id)
     {
         return $this->category->find($id);
     }
 
+    /**
+     * 删除记录
+     *
+     * @param $id
+     * @return mixed
+     */
     public function destroy($id)
     {
         return $this->category
@@ -91,6 +108,13 @@ class CategoryRepository
             ->delete();
     }
 
+    /**
+     * 获取单条记录（带where和select）
+     *
+     * @param $where
+     * @param array ...$select
+     * @return mixed
+     */
     public function selectFirst($where, ...$select)
     {
         return $this->category
@@ -99,6 +123,13 @@ class CategoryRepository
             ->first();
     }
 
+    /**
+     * 更新记录
+     *
+     * @param $id
+     * @param $data
+     * @return mixed
+     */
     public function update($id, $data)
     {
         return $this->category

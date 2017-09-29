@@ -18,8 +18,9 @@ class CategoryController extends Controller
     }
 
     /**
-     * 管理员列表
+     * 记录列表
      *
+     * @param null $keyword
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function listView($keyword = null)
@@ -34,7 +35,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * 添加管理员视图
+     * 添加视图
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -53,7 +54,8 @@ class CategoryController extends Controller
     /**
      * 修改管理员视图
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|\Symfony\Component\HttpFoundation\Response
      */
     public function updateView($id)
     {
@@ -77,7 +79,8 @@ class CategoryController extends Controller
     /**
      * 添加/更新提交
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param null $id
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function post($id = null)
     {
