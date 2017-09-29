@@ -30,6 +30,8 @@ $this->group(['namespace' => 'Manage', 'prefix' => 'manage'], function () {
             $this->post('/commodity/update/{id}', 'CommodityController@post');
             $this->get('/commodity/status/{id}', 'CommodityController@changeStatus')->name('commodity_status');
             $this->get('/commodity/destroy/{id}', 'CommodityController@destroy')->name('commodity_destroy');
+            $this->get('/commodity/image/{id}', 'CommodityController@uploadImage')->name('commodity_image');
+            $this->post('/commodity/image/{id}', 'CommodityController@uploadImagePost');
 
             //属性相关
             $this->get('/attribute/list/{category_id}', 'AttributeController@listView')->name('attribute_list');

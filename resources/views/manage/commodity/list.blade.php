@@ -57,7 +57,7 @@
                             <td>{{ $list['created_at'] }}</td>
                             <td>
                                 <button class="btn btn-warning" type="button" onclick="location='{{ route('commodity_status', ['id' => $list['id'] ]) }}'">上架/下架</button>
-                                <button class="btn btn-success" type="button" onclick="location='{{ route('commodity_status', ['id' => $list['id'] ]) }}'">商品图片</button>
+                                <button class="btn btn-success" type="button" onclick="location='{{ route('commodity_image', ['id' => $list['id'] ]) }}'">商品图片</button>
                                 <button class="btn btn-info" type="button" onclick="location='{{ route('commodity_update', ['id' => $list['id'] ]) }}'">编辑</button>
                                 <button class="btn btn-danger" type="button" onclick="javascript:if(confirm('确实要删除吗?'))location='{{ route('commodity_destroy', ['id' => $list['id'] ]) }}'">删除</button>
                             </td>

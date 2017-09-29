@@ -3,10 +3,13 @@
 namespace App\Services\Manage;
 
 use App\Repositories\CommodityRepository;
+use App\Services\ImageService;
 use Exception;
 
 class CommodityService
 {
+    use ImageService;
+
     protected $commodity;
 
     public function __construct(CommodityRepository $commodity)
@@ -109,6 +112,30 @@ class CommodityService
 
         //执行插入或更新
         return empty($id) ? $this->commodity->create($data) : $this->commodity->update($id, $data);
+    }
+
+    /**
+     * 处理图片上传
+     *
+     * @param $post
+     * @param $commodity_id
+     * @return bool
+     */
+    public function uploadImagePost($post, $commodity_id)
+    {
+        for ($i=0; $i<9; $i++) {
+            if (empty($post['image_'.$i])) {
+                continue;
+            }
+
+            $data['image_'.$i] = $this->uploadImage($post['image_'.$i]);
+        }
+
+        if (!isset($data)) {
+            return false;
+        }
+
+        return $this->commodity->update($commodity_id, $data);
     }
 
     /**

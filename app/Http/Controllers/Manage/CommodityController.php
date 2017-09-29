@@ -109,6 +109,39 @@ class CommodityController extends Controller
     }
 
     /**
+     * 上传商品图片 视图
+     *
+     * @param $commodity_id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function uploadImage($commodity_id)
+    {
+        $commodity = $this->commodity->first($commodity_id);
+
+        return view('manage.commodity.upload_image', [
+            'commodity' => $commodity,
+            'url' => Route('commodity_image', ['id' => $commodity_id]),
+        ]);
+    }
+
+    /**
+     * 上传商品图片 处理
+     *
+     * @param $commodity_id
+     * @return $this
+     */
+    public function uploadImagePost($commodity_id)
+    {
+        try {
+            $this->commodity->uploadImagePost($this->request->all(), $commodity_id);
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors($e->getMessage());
+        }
+
+        return redirect()->route('commodity_image', ['id' => $commodity_id]);
+    }
+
+    /**
      * 修改商品状态
      *
      * @param $commodity_id
