@@ -15,6 +15,7 @@ class CreateCommoditiesTable extends Migration
     {
         Schema::create('commodities', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id');
             $table->string('name'); //商品名称
             $table->float('price'); //商品价格
             $table->integer('stock'); //商品库存

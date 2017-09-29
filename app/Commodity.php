@@ -21,4 +21,9 @@ class Commodity extends Model
         'image_7',
         'image_8',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 }

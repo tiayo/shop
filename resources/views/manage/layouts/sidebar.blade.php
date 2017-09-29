@@ -11,8 +11,8 @@
 
     <li class="menu-list" id="nav_1"><a href=""><i class="fa fa-shopping-cart"></i> <span>商品管理</span></a>
         <ul class="sub-menu-list">
-            <li id="nav_1_1"><a href="">商品管理</a></li>
-            <li id="nav_1_2"><a href="">添加商品</a></li>
+            <li id="nav_1_1"><a href="{{ route('commodity_list') }}">商品管理</a></li>
+            <li id="nav_1_2"><a href="{{ route('commodity_add') }}">添加商品</a></li>
         </ul>
     </li>
 

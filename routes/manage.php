@@ -21,6 +21,16 @@ $this->group(['namespace' => 'Manage', 'prefix' => 'manage'], function () {
             $this->post('/category/update/{id}', 'CategoryController@post');
             $this->get('/category/destroy/{id}', 'CategoryController@destroy')->name('category_destroy');
 
+            //商品相关
+            $this->get('/commodity/list/', 'CommodityController@listView')->name('commodity_list');
+            $this->get('/commodity/list/{keyword}', 'CommodityController@listView')->name('commodity_search');
+            $this->get('/commodity/add', 'CommodityController@addView')->name('commodity_add');
+            $this->post('/commodity/add', 'CommodityController@post');
+            $this->get('/commodity/update/{id}', 'CommodityController@updateView')->name('commodity_update');
+            $this->post('/commodity/update/{id}', 'CommodityController@post');
+            $this->get('/commodity/status/{id}', 'CommodityController@changeStatus')->name('commodity_status');
+            $this->get('/commodity/destroy/{id}', 'CommodityController@destroy')->name('commodity_destroy');
+
             //属性相关
             $this->get('/attribute/list/{category_id}', 'AttributeController@listView')->name('attribute_list');
             $this->get('/attribute/add/{category_id}', 'AttributeController@addView')->name('attribute_add');
