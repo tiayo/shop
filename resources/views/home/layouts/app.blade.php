@@ -1,3 +1,4 @@
+@inject('index', 'App\Services\Home\IndexService')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +15,14 @@
     @show
 </head>
 <body>
-<div class="index clearfix">
+<div class="@yield('class')">
     <header>
         <div class="head-left"><a href="index.html">周进森の假鞋店</a></div>
         <div class="head-con">
             <ul class="nav-top">
-                <li><span>男子</span></li>
-                <li><span>女子</span></li>
-                <li><span>儿童</span></li>
-                <li><span>运动</span></li>
-                <li><span>品牌</span></li>
+                @foreach($parents = $index->getCategoryParent() as $parent)
+                    <li><span>{{ $parent['name'] }}</span></li>
+                @endforeach
             </ul>
             <a href="#" class="login">注册/登录</a>
             <a href="cn/shopping-cart.html" class="shopping-cart"><em>1</em></a>
@@ -43,47 +42,14 @@
                 <a href="cn/goods-list.html">miadidas 个性化定制</a>
                 <a href="cn/goods-list.html">全部男子折扣</a>
             </li>
+            @foreach($parents as $parent)
             <li>
-                <h1>鞋类</h1>
-                <a href="cn/goods-list.html">Originals</a>
-                <a href="cn/goods-list.html">adidas neo</a>
-                <a href="cn/goods-list.html">跑步</a>
-                <a href="cn/goods-list.html">户外</a>
-                <a href="cn/goods-list.html">训练</a>
-                <a href="cn/goods-list.html">网球</a>
-                <a href="cn/goods-list.html">拖鞋</a>
+                <h1>{{ $parent['name'] }}</h1>
+                @foreach($index->getCategoryChildren($parent['id']) as $children)
+                    <a href="{{ $children['id'] }}">{{ $children['name'] }}</a>
+                @endforeach
             </li>
-            <li>
-                <h1>服饰类</h1>
-                <a href="cn/goods-list.html">上衣</a>
-                <a href="cn/goods-list.html">短袖T恤</a>
-                <a href="cn/goods-list.html">长袖T恤</a>
-                <a href="cn/goods-list.html">马甲</a>
-                <a href="cn/goods-list.html">运动卫衣</a>
-                <a href="cn/goods-list.html">夹克/外套</a>
-                <a href="cn/goods-list.html">运动下装</a>
-                <a href="cn/goods-list.html">泳裤</a>
-                <a href="cn/goods-list.html">比赛服</a>
-            </li>
-            <li>
-                <h1>附配件类</h1>
-                <a href="cn/goods-list.html">包</a>
-                <a href="cn/goods-list.html">袜子</a>
-                <a href="cn/goods-list.html">帽子/手套/围巾</a>
-                <a href="cn/goods-list.html">足球/篮球</a>
-                <a href="cn/goods-list.html">运动装备</a>
-            </li>
-            <li>
-                <h1>运动分类</h1>
-                <a href="cn/goods-list.html">跑步</a>
-                <a href="cn/goods-list.html">户外</a>
-                <a href="cn/goods-list.html">训练</a>
-                <a href="cn/goods-list.html">足球</a>
-                <a href="cn/goods-list.html">篮球</a>
-                <a href="cn/goods-list.html">网球</a>
-                <a href="cn/goods-list.html">游泳</a>
-                <a href="cn/goods-list.html">高尔夫</a>
-            </li>
+            @endforeach
         </ul>
     </header>
 

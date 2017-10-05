@@ -1,6 +1,9 @@
 @extends('home.layouts.app')
 
 @section('title', '首页')
+
+@section('class', 'index clearfix')
+
 @section('body')
     <div class="index-bigpic swiper-container clearfix">
         <div class="swiper-wrapper">
@@ -84,7 +87,7 @@
                 <li>
                     <strong>
                         <img src="{{ $item['image_0'] }}"/>
-                        <b><a href="cn/goods-list.html">查看详情</a></b>
+                        <b><a href="{{ route('home.commodity_view', ['id' => $item['id']]) }}">查看详情</a></b>
                     </strong>
                     <span>{{ $item['name'] }}</span>
                     <em>{{ $item->category->name }}</em>

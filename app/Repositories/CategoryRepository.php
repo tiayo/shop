@@ -49,7 +49,6 @@ class CategoryRepository
     {
         return $this->category
             ->where('parent_id', 0)
-            ->orderBy('id', 'desc')
             ->get();
     }
 
@@ -121,6 +120,21 @@ class CategoryRepository
             ->select($select)
             ->where($where)
             ->first();
+    }
+
+    /**
+     * 获取多条记录（带where和select）
+     *
+     * @param $where
+     * @param array ...$select
+     * @return mixed
+     */
+    public function selectGet($where, ...$select)
+    {
+        return $this->category
+            ->select($select)
+            ->where($where)
+            ->get();
     }
 
     /**

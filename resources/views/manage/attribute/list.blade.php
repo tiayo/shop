@@ -28,8 +28,9 @@
 		                <tr>
 		                    <th>ID</th>
 		                    <th>名称</th>
-		                    <th>属性值</th>
+		                    <th>别名</th>
 		                    <th>所属分类</th>
+                            <th>属性值</th>
                             <th>添加时间</th>
 							<th>操作</th>
 		                </tr>
@@ -40,6 +41,7 @@
                         <tr>
                             <td>{{ $list['id'] }}</td>
                             <td>{{ $list['name'] }}</td>
+                            <td>{{ $list['alias'] }}</td>
                             <td>{{ $list->category->name }}</td>
                             <td>{{ $list['value'] }}</td>
                             <td>{{ $list['created_at'] }}</td>

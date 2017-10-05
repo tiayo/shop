@@ -77,6 +77,7 @@ class AttributeService
         //统计数据
         $data['name'] = $post['name'];
         $data['value'] = $post['value'];
+        $data['alias'] = $post['alias'];
 
         //添加时操作
         if ($type == 'add') {

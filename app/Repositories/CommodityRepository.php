@@ -112,4 +112,35 @@ class CommodityRepository
             ->where('id', $id)
             ->update($data);
     }
+
+    /**
+     * 获取最新商品
+     *
+     * @return mixed
+     */
+    public function getNewCommodity()
+    {
+        return $this->commodity
+            ->where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
+    }
+
+    /**
+     * 随机获取查询
+     *
+     * @param $where
+     * @param $num
+     * @return mixed
+     */
+    public function randCommodity($where, $num, ...$select)
+    {
+        return $this->commodity
+            ->select($select)
+            ->where($where)
+            ->inRandomOrder()
+            ->limit($num)
+            ->get();
+    }
 }

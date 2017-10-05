@@ -2,26 +2,22 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Commodity;
 use App\Http\Controllers\Controller;
+use App\Services\Home\IndexService;
 
 class IndexController extends Controller
 {
-    protected $commodity;
+    protected $index;
 
-    public function __construct(Commodity $commodity)
+    public function __construct(IndexService $index)
     {
-        $this->commodity = $commodity;
+        $this->index = $index;
     }
 
     public function index()
     {
         //新品上市
-        $new_commodity = $this->commodity
-            ->where('status', 1)
-            ->orderBy('created_at', 'desc')
-            ->limit(6)
-            ->get();
+        $new_commodity = $this->index->getNewCommodity();
 
         return view('home.index.index', [
             'new_commodity' => $new_commodity,

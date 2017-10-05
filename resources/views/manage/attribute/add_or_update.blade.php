@@ -40,6 +40,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="alias" class="col-sm-2 col-sm-2 control-label">别名</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="alias" name="alias" value="{{ $old_input['alias'] }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="value" class="col-sm-2 col-sm-2 control-label">属性值</label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="value" name="value" value="{{ $old_input['value'] }}"

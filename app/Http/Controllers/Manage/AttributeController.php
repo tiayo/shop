@@ -86,6 +86,7 @@ class AttributeController extends Controller
     {
         $this->validate($this->request, [
             'name' => 'required',
+            'alias' => 'required',
             'value' => 'required',
         ]);
 
@@ -107,6 +108,7 @@ class AttributeController extends Controller
     {
         $this->validate($this->request, [
             'name' => 'required',
+            'alias' => 'required',
             'value' => 'required',
         ]);
 

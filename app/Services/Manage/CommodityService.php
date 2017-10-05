@@ -81,6 +81,12 @@ class CommodityService
         return $this->validata($id);
     }
 
+    /**
+     * 改变状态
+     *
+     * @param $commodity_id
+     * @return mixed
+     */
     public function changeStatus($commodity_id)
     {
         //验证和获取数据
@@ -151,5 +157,12 @@ class CommodityService
 
         //执行删除
         return $this->commodity->destroy($id);
+    }
+
+    public function randCommodity()
+    {
+        return $this->commodity->randCommodity([
+            ['status', 1],
+        ], 5, 'id', 'image_0');
     }
 }

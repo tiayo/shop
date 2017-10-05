@@ -17,6 +17,7 @@ class CreateAttributesTable extends Migration
             $table->increments('id');
             $table->integer('category_id');
             $table->string('name'); //属性名
+            $table->string('alias'); //别名
             $table->string('value'); //属性值
             $table->integer('status')->default(1); //默认：1（可用）
             $table->timestamps();
