@@ -17,7 +17,7 @@
 <body>
 <div class="@yield('class')">
     <header>
-        <div class="head-left"><a href="index.html">周进森の假鞋店</a></div>
+        <div class="head-left"><a href="/">周进森の假鞋店</a></div>
         <div class="head-con">
             <ul class="nav-top">
                 @foreach($parents = $index->getCategoryParent() as $parent)
@@ -46,7 +46,9 @@
             <li>
                 <h1>{{ $parent['name'] }}</h1>
                 @foreach($index->getCategoryChildren($parent['id']) as $children)
-                    <a href="{{ $children['id'] }}">{{ $children['name'] }}</a>
+                    <a href="{{ route('home.category_view', ['id' => $children['id']]) }}">
+                        {{ $children['name'] }}
+                    </a>
                 @endforeach
             </li>
             @endforeach

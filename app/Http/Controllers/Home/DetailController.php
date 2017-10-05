@@ -16,6 +16,12 @@ class DetailController extends Controller
         $this->attribute = $attribute;
     }
 
+    /**
+     * 商品详情页视图
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function view($id)
     {
         //获取当前商品信息

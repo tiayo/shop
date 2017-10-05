@@ -143,4 +143,11 @@ class CommodityRepository
             ->limit($num)
             ->get();
     }
+
+    public function getByCategory($category_id)
+    {
+        return $this->commodity
+            ->where('category_id', $category_id)
+            ->get();
+    }
 }
