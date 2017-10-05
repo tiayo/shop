@@ -31,25 +31,29 @@
                     </div>
                     <div class="goods-color">
                         <h3>颜色选择</h3>
-                        <input name="color" type="radio"value=""/>苹果
+                        @foreach($attributes as $attribute)
+                            @if ($attribute['alias'] == 'color')
+                                @foreach(explode(',', $attribute['value']) as $value)
+                                    <input name="color" type="radio" value="$value"/>
+                                    {{ $value }}
+                                @endforeach
+                            @endif
+                        @endforeach
                     </div>
                     <div class="goods-size">
                         <div class="goods-size-title">尺码表</div>
                         <div class="goods-size-choose clearfix">
                             <select class="size-num" style="width: 100%">
                                 <option value="" disabled selected>选择尺码</option>
-                                <option value ="34">34</option>
-                                <option value ="35">35</option>
-                                <option value="36">36</option>
-                                <option value ="37">37</option>
-                                <option value ="38">38</option>
-                                <option value="39">39</option>
-                                <option value ="40">40</option>
-                                <option value ="41">41</option>
-                                <option value="42">42</option>
-                                <option value ="43">43</option>
-                                <option value ="44">44</option>
-                                <option value="45">45</option>
+                                @foreach($attributes as $attribute)
+                                    @if ($attribute['alias'] == 'size')
+                                        @foreach(explode(',', $attribute['value']) as $value)
+                                            <option value ="{{ $value }}">
+                                                {{ $value }}
+                                            </option>
+                                        @endforeach
+                                    @endif
+                                @endforeach
                             </select>
                             <div class="prompting">请先选择尺码</div>
                         </div>

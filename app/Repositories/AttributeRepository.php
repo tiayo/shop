@@ -93,6 +93,14 @@ class AttributeRepository
             ->first();
     }
 
+    public function selectGet($where, ...$select)
+    {
+        return $this->attribute
+            ->select($select)
+            ->where($where)
+            ->get();
+    }
+
     public function update($id, $data)
     {
         return $this->attribute

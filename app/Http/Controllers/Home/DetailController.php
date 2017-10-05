@@ -3,27 +3,36 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\AttributeRepository;
 use App\Services\Manage\CommodityService;
 
 class DetailController extends Controller
 {
-    protected $commodity;
+    protected $commodity, $attribute;
 
-    public function __construct(CommodityService $commodity)
+    public function __construct(CommodityService $commodity, AttributeRepository $attribute)
     {
         $this->commodity = $commodity;
+        $this->attribute = $attribute;
     }
 
     public function view($id)
     {
+        //获取当前商品信息
         $commodity = $this->commodity->first($id);
 
-        //随机获取数据
+        //随机获取商品
         $rand_commodity  = $this->commodity->randCommodity();
+
+        //获取属性
+        $attributes = $this->attribute->selectGet([
+            ['category_id', $commodity['id']],
+        ], '*');
 
         return view('home.detail.detail', [
             'commodity' => $commodity,
             'rand_commodity' => $rand_commodity,
+            'attributes' => $attributes
         ]);
     }
 }
