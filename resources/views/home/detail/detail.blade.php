@@ -29,13 +29,15 @@
                         <h2>{{ $commodity['name'] }}</h2>
                         <span class="goods-price">￥{{ $commodity['price'] }}</span>
                     </div>
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('home.car_add', ['commodity_id' => $commodity['id'] ]) }}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="price" value="{{ $commodity['price'] }}">
                         <div class="goods-color">
                             <h3>颜色选择</h3>
                             @foreach($attributes as $attribute)
                                 @if ($attribute['alias'] == 'color')
                                     @foreach(explode(',', $attribute['value']) as $value)
-                                        <input name="color" type="radio" value="$value"/>
+                                        <input name="color" type="radio" value="{{ $value }}"/>
                                         {{ $value }}
                                     @endforeach
                                 @endif
@@ -44,7 +46,7 @@
                         <div class="goods-size">
                             <div class="goods-size-title">尺码表</div>
                             <div class="goods-size-choose clearfix">
-                                <select class="size-num" style="width: 100%">
+                                <select class="size-num" name="size" style="width: 100%">
                                     <option value="" disabled selected>选择尺码</option>
                                     @foreach($attributes as $attribute)
                                         @if ($attribute['alias'] == 'size')
@@ -62,7 +64,7 @@
                         <div class="goods-size">
                             <div class="goods-size-title">购买数量</div>
                             <div class="goods-size-choose clearfix">
-                                <select class="goods-num" style="float: left; width: 100%">
+                                <select class="goods-num" name="num" style="float: left; width: 100%">
                                     <option value ="1">1</option>
                                     <option value ="2">2</option>
                                     <option value="3">3</option>

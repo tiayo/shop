@@ -1,4 +1,5 @@
 @inject('index', 'App\Services\Home\IndexService')
+@inject('car', 'App\Services\Home\CarService')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
                 @endforeach
             </ul>
             <a href="#" class="login">注册/登录</a>
-            <a href="cn/shopping-cart.html" class="shopping-cart"><em>1</em></a>
+            <a href="{{ route('home.car') }}" class="shopping-cart"><em>{{ $car->count() }}</em></a>
             <div class="search">
                 <span class="searchBtn"></span>
                 <input type="text" placeholder="商品搜索"/>
