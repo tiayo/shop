@@ -8,16 +8,16 @@
     <div class="index-bigpic swiper-container clearfix">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a href="personal-custom.html"><img src="images/bigpic1.jpg"/></a>
+                <a href="#"><img src="{{ asset('/style/home/images/bigpic1.jpg') }}"/></a>
             </div>
             <div class="swiper-slide">
-                <a href="personal-custom.html"><img src="images/bigpic2.jpg"/></a>
+                <a href="#"><img src="{{ asset('/style/home/images/bigpic2.jpg') }}"/></a>
             </div>
             <div class="swiper-slide">
-                <a href="personal-custom.html"><img src="images/bigpic3.jpg"/></a>
+                <a href="#"><img src="{{ asset('/style/home/images/bigpic3.jpg') }}"/></a>
             </div>
             <div class="swiper-slide">
-                <a href="personal-custom.html"><img src="images/bigpic4.jpg"/></a>
+                <a href="#"><img src="{{ asset('/style/home/images/bigpic4.jpg') }}"/></a>
             </div>
         </div>
         <!-- 分页器 -->
@@ -28,56 +28,13 @@
     <div class="month-has clearfix">
         <h1>本月主推</h1>
         <div class="month-con">
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
-            <a href="cn/goods-details.html">
-                <img src="images/shoes5.jpg"/>
-                <span>xxxxxxx</span>
-                <em>￥999.00</em>
-            </a>
+            @foreach($recommend_commodity as $recommend)
+                <a href="{{ route('home.commodity_view', ['id' => $recommend['id']]) }}">
+                    <img src="{{ $recommend['image_0'] }}"/>
+                    <span>{{ $recommend['name'] }}</span>
+                    <em>￥{{ $recommend['price'] }}</em>
+                </a>
+            @endforeach
         </div>
     </div>
     <div class="new clearfix">

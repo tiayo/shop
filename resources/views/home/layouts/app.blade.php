@@ -27,10 +27,12 @@
             </ul>
             <a href="#" class="login">注册/登录</a>
             <a href="{{ route('home.car') }}" class="shopping-cart"><em>{{ $car->count() }}</em></a>
-            <div class="search">
-                <span class="searchBtn"></span>
-                <input type="text" placeholder="商品搜索"/>
-            </div>
+            <form method="get" action="{{ route('home.search') }}">
+                <div class="search">
+                    <span class="searchBtn"></span>
+                    <input type="text" name="keyword" placeholder="商品搜索"/>
+                </div>
+            </form>
         </div>
         <ul class="nav-menu">
             <li>

@@ -21,6 +21,7 @@ class CreateCommoditiesTable extends Migration
             $table->integer('stock'); //商品库存
             $table->string('unit'); //商品计数单位（个、斤等）
             $table->longText('description'); //商品描述
+            $table->integer('type')->default(0); //商品分组（默认无分组0）
             $table->integer('status')->default(0); //商品状态（默认下架）
             $table->string('image_0')->nullable(); //商品图片1
             $table->string('image_1')->nullable(); //商品图片2

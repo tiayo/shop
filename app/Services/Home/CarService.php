@@ -25,13 +25,13 @@ class CarService
      */
     public function validata($id)
     {
-        $salesman = $this->car->first($id);
+        $car = $this->car->first($id);
 
-        throw_if(empty($salesman), Exception::class, '未找到该记录！', 404);
+        throw_if(empty($car), Exception::class, '未找到该记录！', 404);
 
-        throw_if(can('control'), Exception::class, '没有权限！', 403);
+        throw_if(!can('control', $car), Exception::class, '没有权限！', 403);
 
-        return $salesman;
+        return $car;
     }
 
     /**
@@ -54,6 +54,23 @@ class CarService
     public function count()
     {
         return $this->car->count();
+    }
+
+    /**
+     * 计算购物车总金额
+     *
+     * @param $lists
+     * @return int
+     */
+    public function total_price($lists)
+    {
+        $total_price = 0;
+
+        foreach ($lists as $list) {
+            $total_price += $list['price'] * $list['num'];
+        }
+
+        return $total_price;
     }
 
     /**
@@ -110,7 +127,7 @@ class CarService
     public function destroy($id)
     {
         //验证是否可以操作当前记录
-        $this->validata($id)->toArray();
+        $this->validata($id);
 
         //执行删除
         return $this->car->destroy($id);

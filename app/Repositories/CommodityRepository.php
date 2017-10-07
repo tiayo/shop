@@ -122,8 +122,24 @@ class CommodityRepository
     {
         return $this->commodity
             ->where('status', 1)
+            ->where('type', 1)
             ->orderBy('created_at', 'desc')
             ->limit(6)
+            ->get();
+    }
+
+    /**
+     * 获取本月主推商品
+     *
+     * @return mixed
+     */
+    public function getRecommendCommodity()
+    {
+        return $this->commodity
+            ->where('status', 1)
+            ->where('type', 2)
+            ->orderBy('created_at', 'desc')
+            ->limit(8)
             ->get();
     }
 
@@ -148,6 +164,21 @@ class CommodityRepository
     {
         return $this->commodity
             ->where('category_id', $category_id)
+            ->get();
+    }
+
+    /**
+     * 获取多条记录（带where和select）
+     *
+     * @param $where
+     * @param array ...$select
+     * @return mixed
+     */
+    public function selectGet($where, ...$select)
+    {
+        return $this->commodity
+            ->select($select)
+            ->where($where)
             ->get();
     }
 }

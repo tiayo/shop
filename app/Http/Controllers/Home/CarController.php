@@ -25,9 +25,13 @@ class CarController extends Controller
         //统计数量
         $count = $this->car->count();
 
+        //统计总金额
+        $total_price = $this->car->total_price($lists);
+
         return view('home.car.view', [
             'lists' => $lists,
             'count' => $count,
+            'total_price' => $total_price,
         ]);
     }
 
@@ -41,6 +45,17 @@ class CarController extends Controller
         try {
             $this->car->create($this->request->all(), $commodity_id);
         } catch (\Exception $e) {
+            return response($e->getMessage());
+        }
+
+        return redirect()->route('home.car');
+    }
+
+    public function destory($commodity_id)
+    {
+        try {
+            $this->car->destroy($commodity_id);
+        }catch (\Exception $e) {
             return response($e->getMessage());
         }
 

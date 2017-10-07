@@ -92,6 +92,7 @@ class CommodityController extends Controller
             'stock' => 'required',
             'unit' => 'required',
             'description' => 'required',
+            'type' => 'required|integer',
         ]);
 
         //创建动作时验证邮箱是否已经存在

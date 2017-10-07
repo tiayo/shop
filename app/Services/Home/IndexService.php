@@ -26,6 +26,16 @@ class IndexService
     }
 
     /**
+     * 获取本月主推商品
+     *
+     * @return mixed
+     */
+    public function getRecommendCommodity()
+    {
+        return $this->commodity->getRecommendCommodity();
+    }
+
+    /**
      * 获取父级栏目
      * 
      * @return mixed
@@ -46,5 +56,18 @@ class IndexService
         return $this->category->selectGet([
             ['parent_id', $parent_id],
         ], 'name', 'id');
+    }
+
+    /**
+     * 搜索
+     *
+     * @param $keyword
+     * @return mixed
+     */
+    public function getSearch($keyword)
+    {
+        return $this->commodity->selectGet([
+            ['name', 'like', "%$keyword%"],
+        ], '*');
     }
 }

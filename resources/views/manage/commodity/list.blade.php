@@ -37,8 +37,8 @@
 		                    <th>库存</th>
                             <th>计量单位</th>
                             <th>状态</th>
+                            <th>分组</th>
                             <th>更新时间</th>
-                            <th>创建时间</th>
 							<th>操作</th>
 		                </tr>
 		            </thead>
@@ -53,8 +53,8 @@
                             <td>{{ $list['stock'] }}</td>
                             <td>{{ $list['unit'] }}</td>
                             <td>{{ config('site.commodity_status')[$list['status']] }}</td>
+                            <td>{{ config('site.commodity_type')[$list['type']] }}</td>
                             <td>{{ $list['updated_at'] }}</td>
-                            <td>{{ $list['created_at'] }}</td>
                             <td>
                                 <button class="btn btn-warning" type="button" onclick="location='{{ route('commodity_status', ['id' => $list['id'] ]) }}'">上架/下架</button>
                                 <button class="btn btn-success" type="button" onclick="location='{{ route('commodity_image', ['id' => $list['id'] ]) }}'">商品图片</button>

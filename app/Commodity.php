@@ -12,6 +12,7 @@ class Commodity extends Model
         'price',
         'stock',
         'unit',
+        'type',
         'description',
         'image_0',
         'image_2',

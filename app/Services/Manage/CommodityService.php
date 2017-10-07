@@ -115,6 +115,7 @@ class CommodityService
         $data['stock'] = $post['stock'];
         $data['unit'] = $post['unit'];
         $data['description'] = $post['description'];
+        $data['type'] = $post['type'];
 
         //执行插入或更新
         return empty($id) ? $this->commodity->create($data) : $this->commodity->update($id, $data);

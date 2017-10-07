@@ -48,6 +48,16 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="type" class="col-sm-2 col-sm-2 control-label">分组</label>
+                        <div class="col-sm-3">
+                            <select class="form-control" id="type" name="type">
+                                @foreach(config('site.commodity_type') as $key => $type)
+                                    <option value="{{ $key }}">{{ $type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="name" class="col-sm-2 col-sm-2 control-label">名称</label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="name" name="name" value="{{ $old_input['name'] }}" required>

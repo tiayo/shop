@@ -32,7 +32,7 @@ class DetailController extends Controller
 
         //获取属性
         $attributes = $this->attribute->selectGet([
-            ['category_id', $commodity['id']],
+            ['category_id', $commodity['category_id']],
         ], '*');
 
         return view('home.detail.detail', [
