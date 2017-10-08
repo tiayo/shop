@@ -8,7 +8,6 @@ class Order extends Model
 {
     protected $fillable = [
         'user_id',
-        'commodity',
         'address',
         'phone',
         'price',
@@ -20,5 +19,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function orderDetail()
+    {
+        return $this->hasMany('App\OrderDetail');
     }
 }

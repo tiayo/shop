@@ -66,7 +66,7 @@
                         <h2>￥<span>{{ $total_price }}</span>.00</h2>
                     </div>
                 </div>
-                <a href="#" class="btn-gradient-blue">结算</a>
+                <a href="{{ route('home.order_add') }}" class="btn-gradient-blue">结算</a>
             </div>
         </div>
     </div>

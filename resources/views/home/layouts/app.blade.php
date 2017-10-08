@@ -25,7 +25,11 @@
                     <li><span>{{ $parent['name'] }}</span></li>
                 @endforeach
             </ul>
-            <a href="#" class="login">注册/登录</a>
+            @if(Auth::check())
+                <a href="{{ route('home.logout') }}" class="login">{{ Auth::user()['name'] }}/退出</a>
+            @else
+            <a href="{{ route('home.login') }}" class="login">注册/登录</a>
+            @endif
             <a href="{{ route('home.car') }}" class="shopping-cart"><em>{{ $car->count() }}</em></a>
             <form method="get" action="{{ route('home.search') }}">
                 <div class="search">

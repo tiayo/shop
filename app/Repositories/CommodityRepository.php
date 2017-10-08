@@ -114,6 +114,18 @@ class CommodityRepository
     }
 
     /**
+     * 自减
+     *
+     * @param $num
+     * @return int
+     */
+    public function decrement($num)
+    {
+        return $this->commodity
+            ->decrement('stock', $num);
+    }
+
+    /**
      * 获取最新商品
      *
      * @return mixed

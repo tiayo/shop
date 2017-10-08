@@ -63,16 +63,13 @@
                                 <td>{{ $list['id'] }}</td>
                                 <td>{{ $list->user->name }}</td>
                                 <td>
-                                    @foreach(explode(',', $list['commodity']) as $commodity)
-                                        @php
-                                            $commodity = explode('-', $commodity);
-                                        @endphp
-                                        {{ \App\Commodity::select('name')->find($commodity[0])->name }} * {{ $commodity[1] }} <br >
+                                    @foreach($list->orderDetail as $list_detail)
+                                        {{ $list_detail->commodity->name }} <br>
                                     @endforeach
                                 </td>
                                 <td>{{ $list['address'] }}</td>
                                 <td>{{ $list['phone'] }}</td>
-                                <td>{{ $list['price'] }}</td>
+                                <td>￥{{ $list['price'] }}</td>
                                 <td>{{ config('site.order_type')[$list['type']] }}</td>
                                 <td>{{ $list['tracking'] }}</td>
                                 <td style="color: red">
@@ -83,7 +80,7 @@
                                 <td>
                                     <div class="btn-group">
                                         <button data-toggle="dropdown" class="btn btn-success dropdown-toggle" type="button" id="btnGroupDrop1">
-                                            选择操作 <span class="caret"></span>
+                                            更改状态 <span class="caret"></span>
                                         </button>
                                         <ul aria-labelledby="btnGroupDrop1" role="menu" class="dropdown-menu">
                                             @foreach(config('site.order_status') as $key => $order_status)
