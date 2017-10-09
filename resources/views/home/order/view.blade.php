@@ -14,7 +14,7 @@
                     <h2>商品规格：<em>{{ $detail->remark }}</em></h2>
                     <h3>商品数量：<em>{{ $detail['num'] }}</em></h3>
                     <h4>送货方式：<em>{{ config('site.order_type')[$order['type']] }}</em></h4>
-                    <h5>订单号：<em>{{ $order['tracking'] }}</em></h5>
+                    <h5>订单号：<em>{{ $order['id'] }}</em></h5>
                 </div>
                 <div class="state-mid">
                     <h6>收货人信息</h6>
