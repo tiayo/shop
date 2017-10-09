@@ -111,8 +111,8 @@ class CarService
         $data['price'] = $post['price'];
 
         //写入属性
-        $data['remark'] = isset($post['color']) ?  'color:'.$post['color'].'|' : '';
-        $data['remark'] .= isset($post['size']) ?  'size:'.$post['size'] : '';
+        $data['remark'] = 'color:'.$post['color'].'|';
+        $data['remark'] .= 'size:'.$post['size'];
 
         //执行插入
         return $this->car->create($data);

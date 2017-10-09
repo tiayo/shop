@@ -40,6 +40,8 @@ class CarController extends Controller
         $this->validate($this->request, [
             'num' => 'required|integer',
             'price' => 'required|numeric',
+            'color' => 'required',
+            'size' => 'required',
         ]);
 
         try {
