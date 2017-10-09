@@ -1,6 +1,6 @@
 @extends('home.layouts.app')
 
-@section('title', 's')
+@section('title', '商品列表')
 @section('class', 'goods-list')
 
 @section('body')
