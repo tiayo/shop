@@ -34,7 +34,8 @@ class OrderService
         $order['address'] = $post['address'] ?? Auth::user()['address'];
         $order['phone'] = $post['phone'] ?? Auth::user()['phone'];
         $order['price'] = $this->car->total_price($cars);
-        $order['type'] = 1; //测试：默认为已付款
+        $order['type'] = $post['type'] ?? 1;
+        $order['status'] = 1; //测试：默认为已付款
 
         //创建订单
         $id = $this->order->create($order)->id;
