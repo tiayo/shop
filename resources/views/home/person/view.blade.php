@@ -8,6 +8,7 @@
         <div class="user">
             <img src="{{ Auth::user()['avatar'] }}" class="user-portrait" />
             <span class="user-name">{{ Auth::user()['name'] }}</span>
+            <a href="{{ route('home.person_update') }}">编辑</a>
         </div>
         <div class="order">
             <h1>

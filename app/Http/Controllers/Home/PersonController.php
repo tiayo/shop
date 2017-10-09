@@ -72,7 +72,11 @@ class PersonController extends Controller
         $data['name'] = $post['name'] ?? $user['name'];
         $data['phone'] = $post['phone'] ?? $user['phone'];
         $data['address'] = $post['address'] ?? $user['address'];
-        $data['avatar'] = $this->uploadImage($post['avatar']) ?? $user['avatar'];
+
+        //有更新头像时执行
+        if (isset($post['avatar']) && !empty($post['avatar'])) {
+            $data['avatar'] = $this->uploadImage($post['avatar']) ?? $user['avatar'];
+        }
 
         User::where('id', Auth::id())->update($data);
 

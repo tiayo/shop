@@ -23,7 +23,11 @@ $this->group(['namespace' => 'Home'], function () {
         $this->get('/order/add', 'OrderController@addView')->name('home.order_add');
         $this->post('/order/add', 'OrderController@addPost');
 
+        //个人页面
         $this->get('person', 'PersonController@view')->name('home.person');
+        $this->get('person/update', 'PersonController@update')->name('home.person_update');
+        $this->post('person/update', 'PersonController@updatePost');
+
         $this->get('order/{order_id}', 'OrderController@view')->name('home.order_view');
     });
 });
