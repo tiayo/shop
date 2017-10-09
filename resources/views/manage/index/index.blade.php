@@ -14,97 +14,61 @@
 
 @section('body')
     <div class="row">
-        <div class="col-md-4">
-            <div class="panel">
-                <div class="panel-body">
-                    <div class="calendar-block ">
-                        <div class="cal1">
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <!--statistics start-->
-            <div class="row state-overview">
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel purple">
-                        <div class="symbol">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $store_count }}</div>
-                            <div class="title">门店数量</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel red">
-                        <div class="symbol">
-                            <i class="fa fa-tags"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $manager_count }}</div>
-                            <div class="title">理发师数量</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row state-overview">
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel blue">
-                        <div class="symbol">
-                            <i class="fa fa-money"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $all_price }}</div>
-                            <div class="title">总营业额</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel green">
-                        <div class="symbol">
-                            <i class="fa fa-eye"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $order_count }}</div>
-                            <div class="title">预约数量</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row state-overview">
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel red">
-                        <div class="symbol">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $today_count }}</div>
-                            <div class="title">今天预约</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="panel purple">
-                        <div class="symbol">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $user_count }}</div>
-                            <div class="title">会员总数</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--statistics end-->
-        </div>
-    </div>
-    <div class="row">
         <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    最新订单
+                    <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                </header>
+                <div class="panel-body">
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>用户</th>
+                                <th>商品</th>
+                                <th>地址</th>
+                                <th>电话</th>
+                                <th>价格</th>
+                                <th>寄送方式</th>
+                                <th>运送编号</th>
+                                <th>订单状态</th>
+                                <th>更新时间</th>
+                                <th>创建时间</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="target">
+                            @foreach($orders as $list)
+                                <tr>
+                                    <td>{{ $list['id'] }}</td>
+                                    <td>{{ $list->user->name }}</td>
+                                    <td>
+                                        @foreach($list->orderDetail as $list_detail)
+                                            {{ $list_detail->commodity->name }} <br>
+                                        @endforeach
+                                    </td>
+                                    <td>{{ $list['address'] }}</td>
+                                    <td>{{ $list['phone'] }}</td>
+                                    <td>￥{{ $list['price'] }}</td>
+                                    <td>{{ config('site.order_type')[$list['type']] }}</td>
+                                    <td>{{ $list['tracking'] }}</td>
+                                    <td style="color: red">
+                                        {{ config('site.order_status')[$list['status']] }}
+                                    </td>
+                                    <td>{{ $list['updated_at'] }}</td>
+                                    <td>{{ $list['created_at'] }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </section>
             <section class="panel">
                 <header class="panel-heading">
                     最新会员
