@@ -16,23 +16,15 @@ class IndexService
     }
 
     /**
-     * 获取最新商品
+     * 获取符合要求的商品
      *
+     * @param $type
+     * @param $limit
      * @return mixed
      */
-    public function getNewCommodity()
+    public function getByType($type, $limit)
     {
-        return $this->commodity->getNewCommodity();
-    }
-
-    /**
-     * 获取本月主推商品
-     *
-     * @return mixed
-     */
-    public function getRecommendCommodity()
-    {
-        return $this->commodity->getRecommendCommodity();
+        return $this->commodity->getByType($type, $limit);
     }
 
     /**

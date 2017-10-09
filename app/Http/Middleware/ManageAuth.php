@@ -17,8 +17,8 @@ class ManageAuth
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::guard()->check()) {
-            return redirect()->route('manage.login');
+        if (!can('admin')) {
+            return redirect()->route('home.login');
         }
 
         return $next($request);

@@ -126,32 +126,19 @@ class CommodityRepository
     }
 
     /**
-     * 获取最新商品
+     * 获取符合要求的商品
      *
+     * @param $type
+     * @param $limit
      * @return mixed
      */
-    public function getNewCommodity()
+    public function getByType($type, $limit)
     {
         return $this->commodity
             ->where('status', 1)
-            ->where('type', 1)
+            ->where('type', $type)
             ->orderBy('created_at', 'desc')
-            ->limit(6)
-            ->get();
-    }
-
-    /**
-     * 获取本月主推商品
-     *
-     * @return mixed
-     */
-    public function getRecommendCommodity()
-    {
-        return $this->commodity
-            ->where('status', 1)
-            ->where('type', 2)
-            ->orderBy('created_at', 'desc')
-            ->limit(8)
+            ->limit($limit)
             ->get();
     }
 

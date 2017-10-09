@@ -16,7 +16,7 @@
     @show
 </head>
 <body>
-<div class="@yield('class')">
+<div class="@yield('class')" id="@yield('id')">
     <header>
         <div class="head-left"><a href="/">周进森の假鞋店</a></div>
         <div class="head-con">
@@ -26,7 +26,8 @@
                 @endforeach
             </ul>
             @if(Auth::check())
-                <a href="{{ route('home.logout') }}" class="login">{{ Auth::user()['name'] }}/退出</a>
+                <a href="{{ route('home.person') }}" class="login">{{ Auth::user()['name'] }}</a>
+                <a href="{{ route('home.logout') }}" style="float: right;color: white;margin: 5px -35px;">退出</a>
             @else
             <a href="{{ route('home.login') }}" class="login">注册/登录</a>
             @endif

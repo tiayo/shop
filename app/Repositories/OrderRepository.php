@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrderRepository
 {
@@ -43,6 +44,23 @@ class OrderRepository
     {
         return $this->order
             ->select($select)
+            ->orderBy('id', 'desc')
+            ->get();
+    }
+
+    public function getByUserAll()
+    {
+        return $this->order
+            ->where('user_id', Auth::id())
+            ->orderBy('id', 'desc')
+            ->get();
+    }
+
+    public function getByUser($status)
+    {
+        return $this->order
+            ->where('user_id', Auth::id())
+            ->where('status', $status)
             ->orderBy('id', 'desc')
             ->get();
     }

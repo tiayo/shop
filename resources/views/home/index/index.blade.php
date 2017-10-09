@@ -56,45 +56,13 @@
         <h1>折扣专区</h1>
         <div class="index-discount swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-3-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-3-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-    <div class="accessorize clearfix">
-        <h1>服饰配饰区</h1>
-        <div class="index-accessorize1 swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-3-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="index-accessorize2 swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-3-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="index-accessorize3 swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-2-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-3-0914.jpg"/></a></div>
-                <div class="swiper-slide"><a href="cn/goods-details.html"><img src="images/HP-3-1-0914.jpg"/></a></div>
+                @foreach($discount_commodity as $value)
+                    <div class="swiper-slide">
+                        <a href="{{ route('home.commodity_view', ['id' => $value['id']]) }}">
+                            <img src="{{ $value['image_0'] }}"/>
+                        </a>
+                    </div>
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>

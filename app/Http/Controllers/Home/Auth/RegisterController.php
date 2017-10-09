@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,6 +37,11 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('home.auth.login');
     }
 
     /**
@@ -62,10 +67,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $user['name'] = $data['name'];
+        $user['email'] = $data['email'];
+        $user['password'] = bcrypt($data['password']);
+
+        !empty($data['phone']) ? $user['phone'] = $data['phone'] : null;
+        !empty($data['address']) ? $user['address'] = $data['address'] : null;
+
+
+        return User::create($user);
     }
 }

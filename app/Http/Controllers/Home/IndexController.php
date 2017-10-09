@@ -18,14 +18,19 @@ class IndexController extends Controller
     public function index()
     {
         //新品上市
-        $new_commodity = $this->index->getNewCommodity();
+        $new_commodity = $this->index->getByType(1, 6);
 
         //本月主推
-        $recommend_commodity = $this->index->getRecommendCommodity();
+        $recommend_commodity = $this->index->getByType(2, 8);
+
+        //折扣专区
+        $discount_commodity = $this->index->getByType(3, 9);
+
 
         return view('home.index.index', [
             'new_commodity' => $new_commodity,
             'recommend_commodity' => $recommend_commodity,
+            'discount_commodity' => $discount_commodity
         ]);
     }
 

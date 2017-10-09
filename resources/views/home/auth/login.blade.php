@@ -24,33 +24,35 @@
                 </div>
             </div>
         </form>
+        <form id="register_form" method="post" action="{{ route('home.register') }}">
+            {{ csrf_field() }}
             <div class="login-right">
                 <h1>注册</h1>
                 <div class="login-detial">
-                    <div class="portrait-file">
-                        <img src="../images/1_500X500.jpg"/>
-                        <span class="file-btn">上传头像</span>
+                    <div class="form-input">
+                        <input type="email" name="email" placeholder="请输入邮箱" required/>
                     </div>
                     <div class="form-input">
-                        <input type="text" placeholder="请输入邮箱"/>
+                        <input type="password" name="password" placeholder="请输入密码" required/>
                     </div>
                     <div class="form-input">
-                        <input type="text" placeholder="请输入密码"/>
+                        <input type="password" name="password_confirmation" placeholder="请再次输入密码密码" required/>
                     </div>
                     <div class="form-input">
-                        <input type="text" placeholder="请输入用户名"/>
+                        <input type="text" name="name" placeholder="请输入用户名" required/>
                     </div>
                     <div class="form-input">
-                        <input type="text" placeholder="请输入电话号码"/>
+                        <input type="text" name="phone" placeholder="请输入电话号码"/>
                     </div>
                     <div class="form-input">
-                        <input type="text" placeholder="请输入您的收货地址"/>
+                        <input type="text" name="address" placeholder="请输入您的收货地址"/>
                     </div>
                     <div class="login-btn">
-                        <a href="###">注册</a>
+                        <a href="#" onclick="register_form()">注册</a>
                     </div>
                 </div>
             </div>
+        </form>
             @if(count($errors->all()) > 0)
                 <div class="msg-block" style="width: 100%;margin-top: 2em;">
                     @foreach($errors->all() as $error)
@@ -65,6 +67,10 @@
    <script>
        function login_form() {
            $('#login_form').submit();
+       }
+
+       function register_form() {
+           $('#register_form').submit();
        }
    </script>
 @endsection

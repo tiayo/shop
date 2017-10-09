@@ -290,10 +290,10 @@
 
 /*商品列表*/
 .goods-list {
-    min-width: 1200px;
+    min-width: 1332px;
 }
 .goods-list .content {
-    width: 70%;
+    width: 1332px;
     margin: 50px auto;
 }
 .goods-list .content .content-left {
@@ -456,7 +456,7 @@
     width: 100%;
     height: 500px;
     background-color: #f5f5f5;
-}    
+}
 .goods-details .goods-show .goods-show-con {
     position: relative;
     width: 950px;
@@ -1169,11 +1169,678 @@
     color: #0286CD;
 }
 
+/*个人中心*/
+.personal .content {
+    width: 950px;
+    margin: 0 auto;
+}
+.personal .content .user {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid #cbcbcc;
+}
+.personal .content .user .user-portrait {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.personal .content .user .user-name {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 150px;
+    height: 45px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 45px;
+}
+.personal .content .order h1 {
+    padding: 10px 10px 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.personal .content .order h1 em {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.personal .content .order h1 em:nth-child(1) {
+    margin-left: 50px;
+}
+.personal .content .order h1 .on {
+    color: #f00;
+}
+.personal .content .order .order-list {
+    width: 900px;
+    box-shadow: 1px 1px 15px #cbcbcc;
+    margin: 0 auto 20px;
+}
+.personal .content .order .order-list div {
+    position: relative;
+    height: 100px;
+}
+.personal .content .order .order-list .order-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto 0;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #cbcbcc;
+}
+.personal .content .order .order-list span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+.personal .content .order ul {
+    display: none;
+}
+.personal .content .order .order-list .order-name {
+    left: 180px;
+    width: 165px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.personal .content .order .order-list .order-user {
+    left: 370px;
+    width: 60px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.personal .content .order .order-list .order-price {
+    left: 460px;
+    width: 100px;
+}
+.personal .content .order .order-list .order-time {
+    left: 590px;
+    width: 130px;
+}
+.personal .content .order .order-list .order-state {
+    left: 760px;
+    width: 60px;
+}
+.personal .content .order .order-list .order-details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    margin: auto 0;
+    width: 40px;
+    height: 25px;
+    color: #0286CD;
+    text-align: center;
+    line-height: 25px;
+}
 
+/*订单详情页面*/
+.my-order .content {
+    width: 950px;
+    margin: 50px auto;
+}
+.my-order .content .myOrder-back {
+    display: block;
+    width: 55px;
+    height: 25px;
+    padding-left: 5px;
+    color: #0286CD;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state {
+    border-top: 3px solid #000;
+    border-bottom: 1px solid #cbcbcc;
+}
+.my-order .content .myOrder-state .state-left {
+    position: relative;
+    float: left;
+    width: 325px;
+    height: 200px;
+    border-right: 1px solid #f1f1f1;
+}
+.my-order .content .myOrder-state  .state-left h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.my-order .content .myOrder-state  .state-left h1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 260px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-left h2 {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 260px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-left h3 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 260px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-left h4 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 260px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-left h5 {
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    width: 260px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state .state-mid {
+    position: relative;
+    float: left;
+    width: 325px;
+    height: 200px;
+    border-right: 1px solid #f1f1f1;
+}
+.my-order .content .myOrder-state  .state-mid h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.my-order .content .myOrder-state  .state-mid h1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-mid h2 {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-mid h3 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 290px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state .state-right {
+    position: relative;
+    float: left;
+    width: 298px;
+    height: 200px;
+}
+.my-order .content .myOrder-state  .state-right h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.my-order .content .myOrder-state  .state-right h1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-right h2 {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-right h3 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.my-order .content .myOrder-state  .state-right h4 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
 
-
-
-
+/*订单结算页面*/
+.order-clearing .content {
+    width: 950px;
+    margin: 30px auto;
+}
+.order-clearing .content .delivery-info {
+    border-top: 3px solid #000;
+    box-shadow: 2px 2px 5px #cbcbcc,
+    -2px 0px 5px #cbcbcc;
+}
+.order-clearing .content .delivery-info h1 {
+    height: 35px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.order-clearing .content .delivery-info div {
+    display: block;
+    height: 40px;
+}
+.order-clearing .content .delivery-info div label {
+    float: left;
+    width: 75px;
+    height: 25px;
+    margin-left: 10px;
+    line-height: 25px;
+}
+.order-clearing .content .delivery-info div input {
+    float: left;
+    height: 25px;
+    padding: 0 5px;
+    margin: 0 10px;
+    border: 1px solid #cbcbcc;
+    line-height: 25px;
+}
+.order-clearing .content .delivery-info .delivery-name {
+    width: 80px;
+}
+.order-clearing .content .delivery-info .delivery-address {
+    width: 500px;
+}
+.order-clearing .content .pay-way {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 3px solid #000;
+    box-shadow: 2px 2px 5px #cbcbcc,
+    -2px 0px 5px #cbcbcc;
+}
+.order-clearing .content .pay-way h1 {
+    height: 35px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.order-clearing .content .pay-way span {
+    float: left;
+    margin-right: 15px;
+    padding: 5px 5px 5px 35px;
+    border: 1px solid #cbcbcc;
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+}
+.order-clearing .content .pay-way .on {
+    border: 2px solid #666;
+}
+.order-clearing .content .pay-way .wechat {
+    background: url(../icon/wechat.png) no-repeat 5px;
+    background-size: 25px 25px;
+}
+.order-clearing .content .pay-way .alipay {
+    background: url(../icon/alipay.png) no-repeat 5px;
+    background-size: 25px 25px;
+}
+.order-clearing .content .myOrder-state {
+    margin-top: 20px;
+    padding: 0 10px;
+    border-top: 3px solid #000;
+    box-shadow: 2px 2px 5px #cbcbcc,
+    -2px 0px 5px #cbcbcc;
+}
+.order-clearing .content .myOrder-state .myOrder-state-list {
+    border-bottom: 1px solid #cbcbcc;
+}
+.order-clearing .content .myOrder-state .state-left {
+    position: relative;
+    float: left;
+    width: 325px;
+    height: 175px;
+    margin: 25px 0;
+    border-right: 1px solid #f1f1f1;
+}
+.order-clearing .content .myOrder-state  .state-left h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.order-clearing .content .myOrder-state  .state-left .state-img {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+}
+.order-clearing .content .myOrder-state  .state-left h1 {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-left h2 {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-left h3 {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state .state-mid {
+    position: relative;
+    float: left;
+    width: 325px;
+    height: 175px;
+    margin: 25px 0;
+    border-right: 1px solid #f1f1f1;
+}
+.order-clearing .content .myOrder-state  .state-mid h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.order-clearing .content .myOrder-state  .state-mid h1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-mid h2 {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-mid h3 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 290px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state .state-right {
+    position: relative;
+    float: left;
+    width: 278px;
+    height: 175px;
+    margin: 25px 0;
+}
+.order-clearing .content .myOrder-state  .state-right h6 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.order-clearing .content .myOrder-state  .state-right h1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-right h2 {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-right h3 {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .myOrder-state  .state-right h4 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+}
+.order-clearing .content .submit {
+    float: right;
+    width: 135px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: #0286CD;
+    border: 0;
+    box-shadow: 2px 2px 5px #cbcbcc,
+    -2px 0px 5px #cbcbcc;
+    color: #fff;
+    font-size: 16px;
+    text-indent: 2px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+.order-clearing .submit-mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999999999999999999999;
+}
+.order-clearing .submit-mask .submit-mask-con {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 838px;
+    height: 293px;
+    margin: auto;
+    background-color: #fff;
+}
+.order-clearing .submit-mask .submit-mask-con h1 {
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    line-height: 52px;
+    border-bottom: 1px solid #C8CBCC;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details {
+    padding: 20px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-img {
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-info {
+    float: left;
+    width: 32.5%;
+    margin: 0 2.5%;
+    padding: 0 20px 0 0;
+    border-right: 2px solid #C8CBCC;
+    min-height: 200px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-info h2 {
+    font-size: 16px;
+    color: #888;
+    line-height: 18px;
+    margin-bottom: 5px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-info h3 {
+    font-size: 18px;
+    line-height: 26px;
+    max-height: 52px;
+    overflow: hidden;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-info .mask-price {
+    font-weight: bold;
+    padding: 12px 0 17px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-info .goods-sku p {
+    font-size: 14px;
+    color: #888;
+    padding: 0;
+    line-height: 20px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right {
+    float: left;
+    width: 34%;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right p {
+    font-size: 18px;
+    color: #888;
+    line-height: 18px;
+    margin-top: 5px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right p:nth-child(2) {
+    padding: 20px 0;
+    color: #000;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right p:nth-child(2) span {
+    float: right;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right .btn-check {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    text-align: center;
+    color: #FFF;
+    background: #000;
+    border: 0px solid #000;
+    min-width: 143px;
+}
+.order-clearing .submit-mask .submit-mask-con .mask-details .mask-details-right .btn-clearing {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    text-align: center;
+    color: #FFF;
+    background: linear-gradient(to right, #025f8e, #0286cd);
+    border: 0px solid #000;
+    min-width: 143px;
+}
 
 
 
