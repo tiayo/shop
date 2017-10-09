@@ -25,7 +25,11 @@
                                 <img src="{{ $list_detail->commodity->image_0 }}" class="order-img"/>
                                 <span class="order-name">{{ $list_detail->commodity->name }}</span>
                                 <span class="order-user">{{ $order->user->name }}</span>
-                                <span class="order-price">￥<em>{{ $order['price'] }}</em></span>
+                                <span class="order-price">￥
+                                    <em>
+                                        {{ $list_detail->price * $list_detail->num }}
+                                    </em>
+                                </span>
                                 <span class="order-time">{{ $order['created_at'] }}</span>
                                 <span class="order-state"> {{ config('site.order_status')[$order['status']] }}</span>
                                 <a href="{{ route('home.order_view', ['order_id' => $order['id']]) }}" class="order-details">查看</a>
@@ -42,7 +46,11 @@
                                 <img src="{{ $list_detail->commodity->image_0 }}" class="order-img"/>
                                 <span class="order-name">{{ $list_detail->commodity->name }}</span>
                                 <span class="order-user">{{ $order->user->name }}</span>
-                                <span class="order-price">￥<em>{{ $order['price'] }}</em></span>
+                                <span class="order-price">￥
+                                    <em>
+                                        {{ $list_detail->price * $list_detail->num }}
+                                    </em>
+                                </span>
                                 <span class="order-time">{{ $order['created_at'] }}</span>
                                 <span class="order-state"> {{ config('site.order_status')[$order['status']] }}</span>
                                 <a href="{{ route('home.order_view', ['order_id' => $order['id']]) }}" class="order-details">查看</a>
@@ -59,7 +67,11 @@
                                 <img src="{{ $list_detail->commodity->image_0 }}" class="order-img"/>
                                 <span class="order-name">{{ $list_detail->commodity->name }}</span>
                                 <span class="order-user">{{ $order->user->name }}</span>
-                                <span class="order-price">￥<em>{{ $order['price'] }}</em></span>
+                                <span class="order-price">￥
+                                    <em>
+                                        {{ $list_detail->price * $list_detail->num }}
+                                    </em>
+                                </span>
                                 <span class="order-time">{{ $order['created_at'] }}</span>
                                 <span class="order-state"> {{ config('site.order_status')[$order['status']] }}</span>
                                 <a href="{{ route('home.order_view', ['order_id' => $order['id']]) }}" class="order-details">查看</a>
@@ -76,7 +88,11 @@
                                 <img src="{{ $list_detail->commodity->image_0 }}" class="order-img"/>
                                 <span class="order-name">{{ $list_detail->commodity->name }}</span>
                                 <span class="order-user">{{ $order->user->name }}</span>
-                                <span class="order-price">￥<em>{{ $order['price'] }}</em></span>
+                                <span class="order-price">￥
+                                    <em>
+                                        {{ $list_detail->price * $list_detail->num }}
+                                    </em>
+                                </span>
                                 <span class="order-time">{{ $order['created_at'] }}</span>
                                 <span class="order-state"> {{ config('site.order_status')[$order['status']] }}</span>
                                 <a href="{{ route('home.order_view', ['order_id' => $order['id']]) }}" class="order-details">查看</a>
