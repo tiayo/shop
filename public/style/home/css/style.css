@@ -296,7 +296,7 @@
     width: 1332px;
     margin: 50px auto;
 }
-.goods-list .content .content-left {
+/*.goods-list .content .content-left {
     float: left;
     width: 15%;
     margin-right: 2%;
@@ -396,10 +396,10 @@
     margin-left: 10px;
     text-align: left;
     line-height: 21px;
-}
+}*/
 .goods-list .content .content-right {
     float: left;
-    width: 83%;
+    width: 100%;
 }
 .goods-list .content .content-right .sequencing {
     display: block;
@@ -415,11 +415,11 @@
 .goods-list .content .content-right .goods-con a {
     overflow: hidden;
     float: left;
-    width: 23%;
+    width: 18%;
     margin: 0 2% 12px 0;
     padding-bottom: 5px;
 }
-.goods-list .content .content-right .goods-con a:nth-child(4n+4) {
+.goods-list .content .content-right .goods-con a:nth-child(5n+5) {
     margin-right: 0;
 }
 .goods-list .content .content-right .goods-con a:hover {
