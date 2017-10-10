@@ -1,5 +1,9 @@
 <?php
 
+$this->get('password', function() {
+    return bcrypt('zhoujinsen.sb');
+});
+
 $this->group(['namespace' => 'Home'], function () {
     //登录注册
     $this->get('login', 'Auth\LoginController@showLoginForm')->name('home.login');
