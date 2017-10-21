@@ -4,7 +4,7 @@ return [
     'administrator' => env('SITE_ADMINISTRATE'),
     'upload_image_size' => 1024,
     'list_num' => env('SITE_LIST_NUM'),
-    'title' => '周进森の假鞋店', //网站标题
+    'title' => 'S&C球鞋购物商城', //网站标题
     'order_status' => [ //订单状态
         0 => '等待支付',
         1 => '等待发货',
