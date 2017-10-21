@@ -35,7 +35,7 @@
 
         <!--logo and iconic logo start-->
         <div class="logo text-center">
-            <h2 style="color: #fff;">{{ config('site.title') }}</h2>
+            <h3 style="color: #fff;">{{ config('site.title') }}</h3>
             {{--<a href="/"></a>--}}
             {{--<img style="width:200px" src="http://www.startce.com/skin/zd/images/logo_2.png" alt="">--}}
         </div>

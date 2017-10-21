@@ -18,7 +18,7 @@
 <body>
 <div class="@yield('class')" id="@yield('id')">
     <header>
-        <div class="head-left"><a href="/">周进森の假鞋店</a></div>
+        <div class="head-left"><a href="/">{{ config('site.title') }}</a></div>
         <div class="head-con">
             <ul class="nav-top">
                 @foreach($parents = $index->getCategoryParent() as $parent)
