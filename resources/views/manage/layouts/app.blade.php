@@ -35,9 +35,9 @@
 
         <!--logo and iconic logo start-->
         <div class="logo text-center">
-            {{--<h2 style="color: #fff;">商城系统</h2>--}}
+            <h2 style="color: #fff;">{{ config('site.title') }}</h2>
             {{--<a href="/"></a>--}}
-            <img style="width:200px" src="http://www.startce.com/skin/zd/images/logo_2.png" alt="">
+            {{--<img style="width:200px" src="http://www.startce.com/skin/zd/images/logo_2.png" alt="">--}}
         </div>
 
         <div class="logo-icon text-center">

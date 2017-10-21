@@ -97,9 +97,11 @@ class AttributeService
     public function destroy($id)
     {
         //验证是否可以操作当前记录
-        $this->validata($id)->toArray();
+        $attribute = $this->validata($id)->toArray();
 
         //执行删除
-        return $this->attribute->destroy($id);
+        $this->attribute->destroy($id);
+
+        return $attribute;
     }
 }

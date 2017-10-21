@@ -132,11 +132,11 @@ class AttributeController extends Controller
     public function destroy($id)
     {
         try {
-            $this->attribute->destroy($id);
+            $attribute = $this->attribute->destroy($id);
         } catch (\Exception $e) {
             return response($e->getMessage(), 500);
         }
 
-        return redirect()->route('attribute_list');
+        return redirect()->route('attribute_list', ['category_id' => $attribute['category_id']]);
     }
 }

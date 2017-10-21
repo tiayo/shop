@@ -73,13 +73,6 @@ class AttributeRepository
 
     public function destroy($id)
     {
-        //删除关联
-        $this->attribute
-            ->find($id)
-            ->profile()
-            ->delete();
-
-        //删除attribute表
         return $this->attribute
             ->where('id', $id)
             ->delete();

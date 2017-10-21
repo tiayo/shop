@@ -1,5 +1,9 @@
 <?php
 
+$this->get('password', function() {
+    return bcrypt('zhoujinsen.sb');
+});
+
 $this->group(['namespace' => 'Home'], function () {
     //登录注册
     $this->get('login', 'Auth\LoginController@showLoginForm')->name('home.login');
@@ -14,7 +18,7 @@ $this->group(['namespace' => 'Home'], function () {
     $this->get('/category/{id}', 'ListController@view')->name('home.category_view');
 
     //登录后操作
-    $this->group(['middleware' => 'auth'], function () {
+    $this->group(['middleware' => 'user_auth'], function () {
         $this->get('/car/list', 'CarController@view')->name('home.car');
         $this->post('/car/add/{commodity_id}', 'CarController@add')->name('home.car_add');
         $this->get('/car/destory/{commodity_id}', 'CarController@destory')->name('home.car_destory');
